@@ -23,7 +23,7 @@ import TouchableDoubleTap from "./commons/touchableDoubleTap";
 const Reel = ({ play, showComments, slideSend }) => {
   const [liked, setLiked] = useState(false);
   const [internalPlay, setInternalPlay] = useState(true);
-  const ref = useRef(null);
+  const videoRef = useRef(null);
   const expandAnim = useRef(new Animated.Value(1)).current;
   const likeAnim = useRef(new Animated.Value(0)).current;
   const pauseAnim = useRef(new Animated.Value(0)).current;
@@ -84,7 +84,7 @@ const Reel = ({ play, showComments, slideSend }) => {
   });
 
   useEffect(() => {
-    if (ref.current && play && internalPlay) ref.current.replayAsync();
+    if (videoRef.current && play && internalPlay) videoRef.current.seek(0);
     setInternalPlay(true);
   }, [play]);
 
@@ -226,13 +226,12 @@ const Reel = ({ play, showComments, slideSend }) => {
         }}
         paused={!(play && internalPlay)}
         muted={false}
-        ref={ref}
+        ref={videoRef}
         source={{
           uri: "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
         }}
         resizeMode="cover"
         repeat
-        
       />
       {/* <View
         style={{

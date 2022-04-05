@@ -15,6 +15,8 @@ target 'InstagramClone' do
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
 
+  pod 'react-native-video', :path => '../node_modules/react-native-video'
+
   target 'InstagramCloneTests' do
     inherit! :complete
     # Pods for testing

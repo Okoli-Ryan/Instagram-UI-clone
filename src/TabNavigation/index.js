@@ -76,7 +76,11 @@ const TabNav = () => {
       })}>
       <Screen name="Home" component={HomeScreen} />
       <Screen name="Search" component={SearchScreen} />
-      <Screen name="Reels" component={ReelsScreen} />
+      <Screen
+        name="Reels"
+        options={{ tabBarVisible: false }}
+        component={ReelsScreen}
+      />
       <Screen name="Activity" component={ActivityScreen} />
       <Screen name="Profile" component={ProfileScreen} />
     </Navigator>
