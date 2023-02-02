@@ -1,0 +1,3 @@
+Instagram clone:
+
+An instagram clone of some of it's features and animations, using dummy data.

@@ -27,6 +27,7 @@ const Reel = ({ play, showComments, slideSend }) => {
   const expandAnim = useRef(new Animated.Value(1)).current;
   const likeAnim = useRef(new Animated.Value(0)).current;
   const pauseAnim = useRef(new Animated.Value(0)).current;
+  const heightInit = Dimensions.get("window").height;
 
   const onDoubleTapLike = (button) => {
     if (!button) {

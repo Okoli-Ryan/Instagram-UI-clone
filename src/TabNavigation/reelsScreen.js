@@ -29,7 +29,7 @@ const ReelsScreen = ({ navigation }) => {
   const reelsAnim = useRef(new Animated.Value(0)).current;
   const heightInit = Dimensions.get("window").height;
   const tabBarHeight = useBottomTabBarHeight();
-  const height = heightInit - tabBarHeight;
+  const height = heightInit - tabBarHeight / 2;
 
   //state for the comment modal
   const [hideComments, setHideComments] = useState(true);
@@ -171,7 +171,7 @@ const ReelsScreen = ({ navigation }) => {
 
   const translateVideoY = commentsAnim.interpolate({
     inputRange: [0, 0.3, 1],
-    outputRange: [-height, height / 8, 0],
+    outputRange: [-heightInit, heightInit / 8, 0],
   });
 
   const scaleVideo = commentsAnim.interpolate({
